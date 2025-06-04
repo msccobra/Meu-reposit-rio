@@ -13,4 +13,4 @@ Como ainda não temos uma VM, a mensagem "Não há máquinas virtuais para exibi
 
 ## Configurando a VM
 
-
+Esse menu é bastante rico em opções e não é difícil se perder no meio delas. Portanto vamos nos ater às opções mais importantes para nosso aprendizado.
