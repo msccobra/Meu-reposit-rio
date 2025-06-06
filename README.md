@@ -20,5 +20,6 @@ Contudo, é de nosso interesse fazer uma VM que seja adequada ao objetivo de apr
 
 Nas opções de região, pode ser interessante deixar que o sistema escolha automaticamente, ou pode-se selecionar a região "Brazil South". É importante notar que nem todos os tipos de VM, seja em termos de hardware ou de sistema operacional estão disponíveis para todas as regiões. O próximo passo é escolher o sistema operacional desejado dentro da ampla gama disponibilizada, e.g., Microsoft Windows Server (2025, 2022, 2019), Windows 11 Pro, diversas versões de Linux e mesmo sistemas baseados na arquitetura ARM, em oposição à arquitetura X86/64.
 
+O próximo passo é selecionar o tipo de hardware/configurações da VM, o que será acessado pelo menu "Tamanho". Existem muitas dezenas de configurações dispoíveis para as VMs, variando de custos mensais iniciais de cerca de US$ 10 a mais de US$ 100000. É possível achar configurações munidas de apenas 1 CPU até configurações de quase 100 CPUs, mesma coisa para a memória RAM, de 1 GB até 12 TB. Existem máquinas para todas as necessidades (e bolsos). Imediatamente abaixo ao menu "Tamanho", deve-se escolher um nome de usuário e uma senha segura. 
 
-
+Por fim, há a opção de se selecionar quais portas de rede da máquina virtual podem ser acessadas pela internet. Em seu guia rápido, a [Microsoft](https://learn.microsoft.com/pt-br/azure/virtual-machines/windows/quick-create-portal) recomenda abrir as portas HTTP e RDP, a fim de se permitir o acesso à VM pela internet.
