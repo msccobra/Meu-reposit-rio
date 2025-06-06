@@ -23,3 +23,11 @@ Nas opções de região, pode ser interessante deixar que o sistema escolha auto
 O próximo passo é selecionar o tipo de hardware/configurações da VM, o que será acessado pelo menu "Tamanho". Existem muitas dezenas de configurações dispoíveis para as VMs, variando de custos mensais iniciais de cerca de US$ 10 a mais de US$ 100000. É possível achar configurações munidas de apenas 1 CPU até configurações de quase 100 CPUs, mesma coisa para a memória RAM, de 1 GB até 12 TB. Existem máquinas para todas as necessidades (e bolsos). Imediatamente abaixo ao menu "Tamanho", deve-se escolher um nome de usuário e uma senha segura. 
 
 Por fim, há a opção de se selecionar quais portas de rede da máquina virtual podem ser acessadas pela internet. Em seu guia rápido, a [Microsoft](https://learn.microsoft.com/pt-br/azure/virtual-machines/windows/quick-create-portal) recomenda abrir as portas HTTP e RDP, a fim de se permitir o acesso à VM pela internet.
+
+Se o usuário já estiver satisfeito, basta apenas clicar no botão "Revisar + criar", caso contrário ainda há muitas opções de operação e segurança.
+
+### Demais opções de configuração da VM
+
+O próximo menu é chamado "Disco", onde podem ser definidas opções de redundância dos dados local (algo como um RAID 1, no caso de uma máquina local), em diversas zonas (datacenters diferentes), e com diversos tipos de armazenamento, como HD e SSD, de acordo com as demandas do usuário.
+
+No menu "Rede", é possível definir algumas opções de conectividade da VM, como as já selecionadas portas de rede, IP público
