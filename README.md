@@ -42,3 +42,8 @@ O menu "Avançado" permite que se "Adicione configuração, agentes, scripts ou 
 O último dos menus, antes da revisão é chamado de "Marcas", [Figura 12](https://github.com/msccobra/Meu-reposit-rio/blob/main/11.jpg), O centro da idéia é "Elas são pares chave-valor que ajudam você a identificar recursos com base em configurações relevantes para sua organização.", a fim de se medir/rastrear a implantação de recursos das VMs e as cobranças relativas a elas. Mais detalhes podem ser vistos na [página de recursos da Microsoft](https://learn.microsoft.com/pt-br/azure/azure-resource-manager/management/tag-resources?wt.mc_id=azuremachinelearning_inproduct_portal_utilities-tags-tab) sobre este tema.
 
 Por fim, há a página chamada "Revisar + criar", onde todas as configurações da VM estão sumarizadas para conferência, mostado na [Figura 13](https://github.com/msccobra/Meu-reposit-rio/blob/main/12.jpg). Uma vez satisfeito com as opções escolhidas, basta apenas clicar no botão "Criar".
+
+Após a criação da VM, uma tela como a mostrada na [Figura 14](https://github.com/msccobra/Meu-reposit-rio/blob/main/14.jpg), com o nome e alguns detalhes relativos à VM.
+
+Por fim, para acessar-se a VM, basta clicar sobre o ícone dela no menu incial do Portal, acessar o menu lateral no item "Conectar" e clicar em "Conectar". Uma tela como a mostrada na [Figura 15](https://github.com/msccobra/Meu-reposit-rio/blob/main/15.jpg) aparecerá. A maneira mais fácil de conectar-se à VM é pelo RDP Nativo, onde basta baixar esse arquivo e executá-lo diretamente. A senha de administrador será requisitada e a VM abrirá no navegador, estando pronta para as demandas necessárias do usuário.
+
