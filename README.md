@@ -1,4 +1,4 @@
-# Meu repositório
+# Tutoriais
 # Criando uma VM no Microsoft Azure
 
 Neste exemplo, uma VM será criada através do portal do Microsoft Azure, método que acredito ser o mais simples para usuários iniciantes na plataforma. Outros métodos, como a utilização da linha de comando não serão aborordados nesse momento.
@@ -46,6 +46,22 @@ Por fim, há a página chamada "Revisar + criar", onde todas as configurações 
 Após a criação da VM, uma tela como a mostrada na [Figura 14](https://github.com/msccobra/Meu-reposit-rio/blob/Images/14.jpg), com o nome e alguns detalhes relativos à VM.
 
 Por fim, para acessar-se a VM, basta clicar sobre o ícone dela no menu incial do Portal, acessar o menu lateral no item "Conectar" e clicar em "Conectar". Uma tela como a mostrada na [Figura 15](https://github.com/msccobra/Meu-reposit-rio/blob/Images/15.jpg) aparecerá. A maneira mais fácil de conectar-se à VM é pelo RDP Nativo, onde basta baixar esse arquivo e executá-lo diretamente. A senha de administrador será requisitada e a VM abrirá no navegador, estando pronta para as demandas necessárias do usuário.
+
+
+# Criando um banco de dados no SQL Azure
+
+Da mesma maneira que na criação de uma VM, é possível acessar-se a opção de criar um banco de dados SQL diretamente por um botão abaixo da barra de buscas do Portal Azure, conforme [Figura 16](https://github.com/msccobra/Meu-reposit-rio/blob/Images/1.jpg). Naturalmente, caso não esteja sendo exibido o botão, basta digitar "Bancos de dados SQL" na busca para acessá-lo.
+
+Existe a documentação oficial fornecida pela [Microsoft](https://learn.microsoft.com/pt-br/azure/azure-sql/managed-instance/instance-create-quickstart?view=azuresql&tabs=azure-portal), onde todos os detalhes estão explicados, com links para treinamento, inclusive.
+
+## Início
+
+No Portal Azure, após clicar-se sobre o ícone "Bancos de dados SQL", uma tela como a mostrada na [Figura 17](https://github.com/msccobra/Meu-reposit-rio/blob/Images/sql2.jpg) aparecerá, uma vez que ainda não possuímos um banco de dados na nuvem. Ao clicarmos sobre o botão criar, a tela retratada na [Figura 18](https://github.com/msccobra/Meu-reposit-rio/blob/Images/sql3.jpg) será mostrada.
+
+No campo "Assinatura", o usuário definirá a qual de suas contas/assinaturas Azure estará ligado esse banco de dados, já no campo "Grupo de recursos", eu selecionei a VM que criamos no exemplo acima. Nesse caso, nosso banco de dos compartilhará com a VM seu ciclo de vida, políticas e permissões.
+
+Logo abaixo, haverá os campos "Nome do banco de dados", onde um nome deverá ser escolhido e o campo "Servidor", que deverá ser criado. A [Figura 19](https://github.com/msccobra/Meu-reposit-rio/blob/Images/sql4.jpg) mostra o menu de criação do servidor para o banco de dados. O nome deve ser inédito dentro dos servidores Azure e a localização deve ser escolhida de acordo com o que for mais conveniente para o usuário. Abaixo, haverá as opções de autenticação desse servidor. Podem ser escolhidas as opções que usam o Microsoft Entra ID, que é uma validação efetuada na nuvem, ou a autenticação SQL, que é baseada em usuário e senha. Escolha a que for mais adequada ao seu uso.
+
 
 
 
