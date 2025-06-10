@@ -8,8 +8,12 @@ Em caso de dúvidas, sempre é possível consultar a documentação ofical da [M
 
 ## Início
 
-Primeiramente, conecte-se ao [Portal Azure](https://portal.azure.com/#home). Na parte superior, imediatamente abaixo da barra de busca, haverá algumas opções de serviços oferecidos pelo Azure, dentre eles o ícone referente às VMs do usuário.
+Primeiramente, conecte-se ao [Portal Azure](https://portal.azure.com/#home). Na parte superior, imediatamente abaixo da barra de busca, haverá algumas opções de serviços oferecidos pelo Azure, dentre eles o ícone referente às VMs do usuário, conforme [Figura 1](https://github.com/msccobra/Meu-reposit-rio/blob/main/1.jpg).
+
 Como ainda não temos uma VM, a mensagem "Não há máquinas virtuais para exibir" aparecerá. Imediatamente abaixo dela, haverá um botão para a criação de uma VM. Clicando nele, será aberto um menu com diversas opções, a que desejamos (por ora) é: "Máquina Virtual". Assim, serão abertas as opções de configuração da VM.
+
+![2](https://github.com/user-attachments/assets/803dddda-ed8e-4ed5-8610-6946fae92dc1)
+
 
 ## Configurando a VM (Menu inicial)
 
