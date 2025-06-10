@@ -30,4 +30,14 @@ Se o usuário já estiver satisfeito, basta apenas clicar no botão "Revisar + c
 
 O próximo menu é chamado "Disco", onde podem ser definidas opções de redundância dos dados local (algo como um RAID 1, no caso de uma máquina local), em diversas zonas (datacenters diferentes), e com diversos tipos de armazenamento, como HD e SSD, de acordo com as demandas do usuário.
 
-No menu "Rede", é possível definir algumas opções de conectividade da VM, como as já selecionadas portas de rede, IP público
+No menu "Rede", é possível definir algumas opções de conectividade da VM, como as já selecionadas portas de rede, IP público, opções de segurança e de balanceamento de rede.
+
+No menu "Gerenciamento", há opções relativas ao desligamento automático da VM, caso conveniente, de backup e atualizações automáticas do sistema operacional.
+
+O próximo menu, chamado "Monitoramento", conta com opções de diagnóstico e monitoramento da VM, podendo ser criados alertas para o administrador da VM de acordo com os critérios/métricas estabelecidos por ele.
+
+O menu "Avançado" permite que se "Adicione configuração, agentes, scripts ou aplicativos adicionais por meio de extensões da máquina virtual ou cloud-init.", ou seja, permite que o administrador selecione extensões e aplicativos que poderão ser baixados/executados pela VM após sua implantação.
+
+O último dos menus, antes da revisão é chamado de "Marcas". O centro da idéia é "Elas são pares chave-valor que ajudam você a identificar recursos com base em configurações relevantes para sua organização.", a fim de se medir/rastrear a implantação de recursos das VMs e as cobranças relativas a elas. Mais detalhes podem ser vistos na [página de recursos da Microsoft](https://learn.microsoft.com/pt-br/azure/azure-resource-manager/management/tag-resources?wt.mc_id=azuremachinelearning_inproduct_portal_utilities-tags-tab) sobre este tema.
+
+Por fim, há a página chamada "Revisar + criar", onde todas as configurações da VM estão sumarizadas para conferência.
