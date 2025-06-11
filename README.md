@@ -41,7 +41,7 @@ O menu "Avançado" permite que se "Adicione configuração, agentes, scripts ou 
 
 O último dos menus, antes da revisão é chamado de "Marcas", [Figura 12](https://github.com/msccobra/Meu-reposit-rio/blob/Images/11.jpg), O centro da idéia é "Elas são pares chave-valor que ajudam você a identificar recursos com base em configurações relevantes para sua organização.", a fim de se medir/rastrear a implantação de recursos das VMs e as cobranças relativas a elas. Mais detalhes podem ser vistos na [página de recursos da Microsoft](https://learn.microsoft.com/pt-br/azure/azure-resource-manager/management/tag-resources?wt.mc_id=azuremachinelearning_inproduct_portal_utilities-tags-tab) sobre este tema.
 
-Por fim, há a página chamada "Revisar + criar", onde todas as configurações da VM estão sumarizadas para conferência, mostado na [Figura 13](https://github.com/msccobra/Meu-reposit-rio/blob/Images/12.jpg). Uma vez satisfeito com as opções escolhidas, basta apenas clicar no botão "Criar".
+Por fim, há a página chamada "Revisar + criar", onde todas as configurações da VM estão sumarizadas para conferência, mostrado na [Figura 13](https://github.com/msccobra/Meu-reposit-rio/blob/Images/12.jpg). Uma vez satisfeito com as opções escolhidas, basta apenas clicar no botão "Criar".
 
 Após a criação da VM, uma tela como a mostrada na [Figura 14](https://github.com/msccobra/Meu-reposit-rio/blob/Images/14.jpg), com o nome e alguns detalhes relativos à VM.
 
@@ -61,6 +61,25 @@ No Portal Azure, após clicar-se sobre o ícone "Bancos de dados SQL", uma tela 
 No campo "Assinatura", o usuário definirá a qual de suas contas/assinaturas Azure estará ligado esse banco de dados, já no campo "Grupo de recursos", eu selecionei a VM que criamos no exemplo acima. Nesse caso, nosso banco de dos compartilhará com a VM seu ciclo de vida, políticas e permissões.
 
 Logo abaixo, haverá os campos "Nome do banco de dados", onde um nome deverá ser escolhido e o campo "Servidor", que deverá ser criado. A [Figura 19](https://github.com/msccobra/Meu-reposit-rio/blob/Images/sql4.jpg) mostra o menu de criação do servidor para o banco de dados. O nome deve ser inédito dentro dos servidores Azure e a localização deve ser escolhida de acordo com o que for mais conveniente para o usuário. Abaixo, haverá as opções de autenticação desse servidor. Podem ser escolhidas as opções que usam o Microsoft Entra ID, que é uma validação efetuada na nuvem, ou a autenticação SQL, que é baseada em usuário e senha. Escolha a que for mais adequada ao seu uso.
+
+Voltando ao menu anterior, existem ainda algumas outras opções a serem selecionadas. Primeiramente, existe a opção de se utilizar o pool elástico. Essa é uma opção que encarece substancialmente o banco de dados, mas pode ser muito útil em condições onde existem diversos bancos de dados a serem gerenciados, pois dessa maneira os recursos (computacionais e de espaço) serão otimizados automaticamente. Caso a opção escolhida seja "Sim", será necessário fazer a configuração do pool elástico, tento em recursos computacionais (vCores), quanto em recursos de armazenamento. Neste exemplo, vamos não selecionaremos essa opção.
+
+Dessa maneira, nos resta configurar o hardware "virtual" no qual o banco de dados rodará. A [Figura 20](https://github.com/msccobra/Meu-reposit-rio/blob/Images/sql5.jpg) mostra as configurações possíveis para este recurso. A primeira opção é sobre o provisionamento de espaço e de recursos computacionais, se alocados previamente, ou sob demanda, de acordo com a utilização. Existe uma diferença muito expressiva no custo dessas duas opções, sendo mais barato deixar o sistema alocar recursos automaticamente. Por fim, haverá a opção de determinar-se o tamanho máximo do banco de dados, de 1 GB a 1 TB e também a opção de adicionar uma camada de redundância, a fim de aumentar-se a segurança, o que dobra o valor dos serviços.
+
+Voltando ao menu inicial, a última opção é a de redundância de armazenamento de backup, que pode ser local, ou com redundância de zona, geográfica ou de ambas.
+
+
+## Demais configurações do banco de dados
+
+O próximo menu chama-se "Rede" e está mostrado na [Figura 21](https://github.com/msccobra/Meu-reposit-rio/blob/Images/sql6.jpg). As primeiras opções disponíveis são as de conectividade de rede, onde define-se o nível de acesso que haverá ao servidor, se o acesso será restrito, público, através da rede Azure e do IP do cliente, ou privado, onde regras de acesso devem ser criadas. Após isso, define-se a política de conexão con o servidor, onde a [Microsoft recomenda](https://learn.microsoft.com/pt-br/azure/azure-sql/database/connectivity-architecture?view=azuresql#connection-policy) que seja selecionada a opção "Redirecionamento". Por fim, haveria a opção de selecionar-se a versão de protocolo de critografia usada, mas ela está bloqueada (nesse momento) à versão 1.2 do TLS. 
+
+Por ora, vamos pular as demais etapa da aba "Segurança", pois suas opções são muito específicas e, por enquanto, ainda estão fora de escopo desse tutorial. Já a aba de "Configurações adicionais" apenas trata da fonte dos dados, se será criado um banco de dados em branco, se será feito backup de dados já existentes ou se o banco será preenchidos com dados de amostra fornecidos pelo sistema, conforme mostrado na [Figura 22](https://github.com/msccobra/Meu-reposit-rio/blob/Images/sql7.jpg). Ainda há a indicação da janela de manutenção do sistema, pois não há opção de mudá-la.
+
+Por fim, há o menu "Rótulos", que tem a exata mesma finalidade do menu "Marcas" citado anteriormente, i.e., "As marcas são pares de nome/valor que permitem classificar recursos e exibir a cobrança consolidada aplicando a mesma marca a vários recursos e grupos de recursos.", citando diretamente a explicação dada pela Microsoft.
+
+Finalmente, há o menu "Revisar + criar", onde todas as configurações do banco de dados estão sumarizadas para conferência, conforme [Figura 23](https://github.com/msccobra/Meu-reposit-rio/blob/Images/sql8.jpg). Após conferência, basta clicar sobre op botão "Criar".
+
+
 
 
 
