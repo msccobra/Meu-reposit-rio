@@ -79,6 +79,10 @@ Por fim, há o menu "Rótulos", que tem a exata mesma finalidade do menu "Marcas
 
 Finalmente, há o menu "Revisar + criar", onde todas as configurações do banco de dados estão sumarizadas para conferência, conforme [Figura 23](https://github.com/msccobra/Meu-reposit-rio/blob/Images/sql8.jpg). Após conferência, basta clicar sobre op botão "Criar".
 
+Após a implantação do banco de dados, uma tela como a mostrada na [Figura 24](https://github.com/msccobra/Meu-reposit-rio/blob/Images/sql9.jpg) será mostrada. Ao clicar-se em "Ir para o recurso", uma tela como a da [Figura 25](https://github.com/msccobra/Meu-reposit-rio/blob/Images/sql10.jpg) será mostrada, permitindo fazer-se outras configurações, conectar-se a uma fonte de dados e fazer consulta aos dados através da linguagem do Microsoft SQL Server (existem algumas pequenas diferenças de sintaxe entre os diversos provedores SQL, mas a estrutura é a mesma em todos os casos). 
+
+Pronto! Está feito nosso primeiro banco de dados SQL na plataforma Azure.
+
 
 
 
