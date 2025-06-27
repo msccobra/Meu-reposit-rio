@@ -87,8 +87,246 @@ Pronto! Está feito nosso primeiro banco de dados SQL na plataforma Azure.
 
 O desafio da vez consiste em fazermos a análise de um relatório de vendas de uma fabricante de videogames fictícia, fazendo uma análise completa das métricas disponíveis com uso de ferramentas de IA. Para este caso, eu escolhi fazer uso da ferramenta da Microsoft, o Copilot, que já vem instalada no Windows 11, tem uma interface bastante amigável e é razoavelmente rápida e precisa. Naturalmente, essa mesma análise poderia ser feita com uso de outras ferramentas, como o Chat GPT, o Grok, ou alguma das plataformas da Anthropic.
 
+Os dados usados neste exemplo estão nesse [documento](https://github.com/msccobra/Meu-reposit-rio/blob/data/Dados.csv).
 
+## Uma breve exploração dos dados
 
+A planilha contem dados de vendas de uma empresa de videogame durante o ano de 2024. Na planilha, cada uma das linhas refere-se a um evento de venda distinto, já as colunas apresentam as características de cada um desses eventos. Os dados mais usados na análise que será feita referem-se ao tipo de produto (determinado pela SKU [stock keeping unit] e pelo nome do produto), a data da venda, o preço unitário, a quantidade vendida em cada evento, o preço total e o desconto, a plataforma de venda (AliExpress, Etsy ou Shopee), o país do comprador e sua data de nascimento.
 
+Como se trata de um banco de dados pequeno, com 61 linhas, o número e tipo de análise que podemos fazer é um pouco limitada. Contudo, neste exemplo, procurarei fazeê-la da maneira mais abrangente possível.
 
+### Resultados da análise
 
+Nesse trecho fiz uma requisição para o Copilot para que ele fizesse um resumo da exploração dos dados na linguagem Markdown. O prompt exato utilizado foi: "Apresente os dados obtidos do documento, com todas as tabelas que fizemos até agora, em linguagem markdown, para exibição no github". Ficou bom, mas não ficou no padrão que eu gostaria. Então fiz alguns refinamentos, incluindo a conversão para dólar de todas as vendas. Precisei de vários prompts até conseguir o que desejava, foi bem trabalhoso.
+O resultado das análises está abaixo, sem qualquer edição de minha parte, foi um copia e cola:
+
+## 💱 Análise de Vendas – MEGANIUM Series (valores convertidos para USD)
+
+Este relatório apresenta uma análise completa das vendas dos produtos MEGANIUM, com **todos os valores convertidos para USD**, com base nas taxas de câmbio de 26/06/2025:
+
+- 1 GBP = 1,37 USD  
+- 1 EUR = 1,17 USD
+
+---
+
+## 🛍️ Produtos Mais Vendidos
+
+| Produto                    | Quantidade Vendida | Preço Médio Unitário (USD) |
+|----------------------------|--------------------|-----------------------------|
+| **NEW MEGANIUM RG 40XXV**  | 41                 | 113,66                      |
+| NEW MEGANIUM RG35XX        | 36                 | 102,08                      |
+| NEW MEGANIUM RG28XX        | 36                 | 77,38                       |
+| NEW MEGANIUM RG CubeXX     | 36                 | 88,61                       |
+| MEGANIUM RG353M            | 29                 | 122,41                      |
+
+---
+
+## 🌍 Vendas por País
+
+### Total de Transações
+
+| País        | Total de Vendas |
+|-------------|-----------------|
+| Canadá      | 14              |
+| França      | 12              |
+| Austrália   | 9               |
+| Alemanha    | 9               |
+| Japão       | 8               |
+| Reino Unido | 5               |
+| EUA         | 3               |
+
+### Por Tipo de Produto
+
+| País        | RG35XX | RG28XX | CubeXX | RG 40XXV | RG353M |
+|-------------|--------|--------|--------|----------|--------|
+| Canadá      | 4      | 3      | 1      | 6        | 0      |
+| França      | 4      | 3      | 2      | 1        | 2      |
+| Austrália   | 1      | 3      | 4      | 0        | 1      |
+| Alemanha    | 1      | 2      | 2      | 3        | 1      |
+| Japão       | 0      | 1      | 1      | 4        | 2      |
+| Reino Unido | 2      | 0      | 1      | 0        | 2      |
+| EUA         | 0      | 0      | 1      | 0        | 2      |
+
+---
+
+## 📅 Vendas por Mês
+
+| Mês/Ano     | Total de Vendas |
+|-------------|-----------------|
+| Maio/2024   | 3               |
+| Junho/2024  | 5               |
+| Julho/2024  | 8               |
+| Agosto/2024 | 14              |
+| Setembro/2024 | 13            |
+| Outubro/2024 | 11             |
+
+---
+
+## 📆 Vendas por Produto ao Longo dos Meses
+
+| Mês/Ano     | RG 40XXV | RG35XX | RG28XX | CubeXX | RG353M |
+|-------------|----------|--------|--------|--------|--------|
+| Mai/2024    | 2        | 0      | 0      | 0      | 1      |
+| Jun/2024    | 0        | 0      | 0      | 1      | 4      |
+| Jul/2024    | 0        | 2      | 1      | 1      | 3      |
+| Ago/2024    | 3        | 2      | 2      | 2      | 5      |
+| Set/2024    | 5        | 3      | 3      | 3      | 1      |
+| Out/2024    | 3        | 4      | 4      | 3      | 2      |
+
+---
+
+## 🎂 Perfil Etário dos Compradores
+
+### Estatísticas Gerais (em 27/06/2025)
+
+- **Idade média:** 47,3 anos  
+- **Mediana:** 46 anos  
+- **Desvio padrão:** 11,1 anos
+
+### Por Produto
+
+| Produto                    | Idade Média (anos) |
+|----------------------------|--------------------|
+| NEW MEGANIUM RG 40XXV      | 45,6               |
+| NEW MEGANIUM RG35XX        | 46,8               |
+| NEW MEGANIUM RG28XX        | 46,9               |
+| NEW MEGANIUM RG CubeXX     | 48,4               |
+| MEGANIUM RG353M            | 49,3               |
+
+### Por País
+
+| País         | Idade Média (anos) |
+|--------------|--------------------|
+| Canadá       | 46,6               |
+| França       | 48,4               |
+| Austrália    | 47,1               |
+| Alemanha     | 49,6               |
+| Japão        | 47,4               |
+| Reino Unido  | 47,2               |
+| EUA          | 50,3               |
+
+---
+
+## 💸 Descontos Aplicados
+
+### Valor Médio dos Descontos (em USD)
+
+| Plataforma   | Valor Médio de Desconto (USD) |
+|--------------|-------------------------------|
+| Shopee       | 63,91                         |
+| Etsy         | 49,61                         |
+| AliExpress   | 40,94                         |
+| **Geral**    | **50,15**                     |
+
+### Percentual Médio de Desconto
+
+| Plataforma   | % Médio de Desconto |
+|--------------|----------------------|
+| Shopee       | 12,25%               |
+| Etsy         | 11,37%               |
+| AliExpress   | 11,22%               |
+| **Geral**    | **11,72%**           |
+
+---
+
+## 📌 Observações
+
+- Conversões feitas com base nas taxas de câmbio de 26/06/2025.
+- Todos os valores monetários foram recalculados com base na moeda original de cada transação.
+- Valores arredondados para duas casas decimais.
+- A análise considera todas as vendas registradas no arquivo sem exclusões manuais.
+
+---
+
+## 📈 Possíveis Extensões
+
+- Receita total por produto e país (em USD)
+- Ticket médio por comprador
+- Análise de sazonalidade por SKU
+- Visualizações gráficas com matplotlib, seaborn ou plotly
+
+---
+
+Existem mais análises a serem feitas, contudo optei por parar nas mostradas. Uma análise com foco estatístico, com séries temporais de evolução de vendas de cada tipo de produto, por país, idade, mês etc, precisaria de um banco de dados maior. Em um banco de dados pequeno, os desvios ficam muito grandes, os outliers podem ter papel mais preponderante nos números.
+
+# Conversa completa, com prompts
+
+Abaixo está o registro completo da conversa. Anteriormente à primeira pergunta, eu subi para o Copilot a [planilha](https://github.com/msccobra/Meu-reposit-rio/blob/data/Dados.csv) contendo os dados para análise. É possível ver, que, muitas vezes, foi necessário fazer correções e refinamentos nos prompts, pois as respostas estavem incorretas, especialemnte no tocante das conversões de GBP e EUR para USD. De maneira geral, foi bastante fácil chegar aonde queria, mas atenção é sempre necessária para evitar erros (e a IA erra bastante). 
+
+## 📂 Análise de Dados – `Dados.csv`
+
+**Usuário**: De todos os produtos, qual foi o mais vendido? Faça uma tabela com o nome dos produtos e a quantidade vendida de cada. Também coloque o preço médio praticado em cada um (unit_price)  
+**Copilot**: [tabela com contagem e preços médios por SKU. Produto mais vendido: NEW MEGANIUM RG 40XXV]
+
+**Usuário**: Detalhe o número de vendas por país, primeiramente o total, depois especificando o tipo de produto  
+**Copilot**: [tabela com totais por país e distribuição por SKU]
+
+**Usuário**: Detalhe o número de vendas por mês em uma tabela  
+**Copilot**: [tabela com número total de vendas por mês – de maio a outubro/2024]
+
+**Usuário**: qual a idade média dos compradores, a mediana e o desvio padrão?  
+**Copilot**:  
+- Média: 47,3 anos  
+- Mediana: 46 anos  
+- Desvio padrão: 11,1 anos
+
+**Usuário**: qual o valor médio dos descontos em geral e o valor médio de desconto por plataforma  
+**Copilot**:  
+- Geral: 44,45  
+- Shopee: 56,15  
+- Etsy: 43,84  
+- AliExpress: 37,87  
+
+**Usuário**: qual o percentual médio de desconto em geral e em cada uma das plataformas?  
+**Copilot**:  
+- Geral: 11,72%  
+- Shopee: 12,25%  
+- Etsy: 11,37%  
+- AliExpress: 11,22%  
+
+---
+
+## 📦 Relatório em Markdown (solicitado por usuário)
+
+**Usuário**: por ora, seria possível resumir essa conversa, escrevendo-a em linguagem markdown, para utilização em um repositório do GitHub?  
+**Copilot**: [resposta com relatório completo em Markdown contendo tabelas e seções]
+
+---
+
+## 📈 Análises Avançadas
+
+**Usuário**: Gostaria de ter uma tabela contendo a idade média dos compradores para cada produto...  
+**Copilot**:  
+- Idade média por produto e por país  
+- Tabela de vendas por produto por mês
+
+**Usuário**: Análise de desvio padrão foi baseada em qual distribuição?  
+**Copilot**: Desvio padrão amostral usando correção de Bessel, alinhado com a distribuição t de Student
+
+**Usuário**: Apresente os dados obtidos do documento, com todas as tabelas que fizemos até agora, em linguagem markdown  
+**Copilot**: [relatório completo em markdown com todas as seções e tabelas revisadas]
+
+---
+
+## 💱 Conversão Monetária
+
+**Usuário**: converta GBP e EUR para USD...  
+**Copilot**: [informa câmbio: 1 GBP = 1.37 USD, 1 EUR = 1.17 USD, e apresenta relatório parcial com valores convertidos]
+
+**Usuário**: Refaça o relatório completo com base na conversão  
+**Copilot**: [resposta completa com preços unitários recalculados por produto em USD]
+
+**Usuário**: A tabela de desconto médio ainda não foi atualizada com base na conversão  
+**Copilot**: [corrige tabela de descontos médios em USD]
+
+**Usuário**: Refaça o relatório completo com todos os valores recalculados  
+**Copilot**: ✅ Entregue: relatório final consolidado com todos os valores em USD
+
+---
+
+## 🗎 Solicitação Final
+
+**Usuário**: Pegue toda essa conversa desde o início, incluindo prompts e respostas e passe para a linguagem markdown. Também faça um pdf com ela  
+**Copilot**: ✅ Markdown completo entregue
+
+---
