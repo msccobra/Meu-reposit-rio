@@ -83,6 +83,10 @@ Após a implantação do banco de dados, uma tela como a mostrada na [Figura 24]
 
 Pronto! Está feito nosso primeiro banco de dados SQL na plataforma Azure.
 
+# Criando um relatório de vendas completo com ajuda de ferramentas de IA
+
+O desafio da vez consiste em fazermos a análise de um relatório de vendas de uma fabricante de videogames fictícia, fazendo uma análise completa das métricas disponíveis com uso de ferramentas de IA. Para este caso, eu escolhi fazer uso da ferramenta da Microsoft, o Copilot, que já vem instalada no Windows 11, tem uma interface bastante amigável e é razoavelmente rápida e precisa. Naturalmente, essa mesma análise poderia ser feita com uso de outras ferramentas, como o Chat GPT, o Grok, ou alguma das plataformas da Anthropic.
+
 
 
 
