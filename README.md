@@ -330,3 +330,88 @@ Abaixo está o registro completo da conversa. Anteriormente à primeira pergunta
 **Copilot**: ✅ Markdown completo entregue
 
 ---
+
+# Criando um programa de validação/identificação da bandeira de um cartão de crédito
+
+O desafio aqui era, utilizando-se do Github Copilot, criar um programa que informasse (caso válido) a qual operadora, e.g., Visa, American Express, Diners Club etc, o número do cartão de crédito digitado corresponde.
+
+Aqui, por já ter certo conhecimento na linguagem Python e no módulo **re** (Regular Expressions, ou RegEx), optei por utilizá-los nesse projeto. O programa prode ser baixado [aqui](https://github.com/msccobra/Meu-reposit-rio/releases/download/Python/validador.py), e está logo abaixo, onde apenas colei o produto do seguinte prompt: "Exporte o programa para o arquivo readme.md e faça uma explicação breve das linhas de código". Eu fiz um arquivo readme.md na pasta do projeto, no meu computador, e ele escreveu o que está postado abaixo. O Github Copilot ainda não tem a capacidade de exportar diretamente para o site do Github. Eu perguntei.
+
+Para ajudar o Copilot, coloquei alguns prints ([primeiro](https://github.com/msccobra/Meu-reposit-rio/blob/Images/CC1.jpg) e [segundo](https://github.com/msccobra/Meu-reposit-rio/blob/Images/CC2.jpg)) que tirei como contexto, para que o programa não ficasse limitado apenas às 4 bandeiras de alcance global, i.e., Visa, MasterCard, AMEX e Diners Club, e também pudesse adicionar as bandeiras mais regionais, como Elo, Hipercard, Aura e JCB.
+
+Assim sendo, o conteúdo do programa está logo abaixo.
+
+
+# Validador de Bandeira de Cartão de Crédito
+
+Este programa identifica a bandeira de um cartão de crédito a partir do número digitado, ignorando espaços. Ele cobre as principais bandeiras do mercado brasileiro e pede um novo número caso o digitado seja inválido.
+
+## Código
+
+```python
+import re
+
+def validar_bandeira(numero_cartao: str) -> str:
+    """Valida a bandeira do cartão de crédito com base no número fornecido."""
+    numero_cartao = numero_cartao.replace(" ", "")  # Remove espaços
+
+    # Visa
+    if re.match(r"^4[0-9]{12}(?:[0-9]{3})?$", numero_cartao):
+        return "Visa"
+    # MasterCard (51-55, 2221-2720)
+    elif re.match(r"^(5[1-5][0-9]{14}|2(2[2-9][1-9]|2[3-9][0-9]|[3-6][0-9]{2}|7[01][0-9]|720)[0-9]{12})$", numero_cartao):
+        return "MasterCard"
+    # American Express (34, 37)
+    elif re.match(r"^3[47][0-9]{13}$", numero_cartao):
+        return "American Express"
+    # Discover (6011, 65, 644-649, 622)
+    elif re.match(r"^(6011[0-9]{12}|65[0-9]{14}|64[4-9][0-9]{13}|622[0-9]{13})$", numero_cartao):
+        return "Discover"
+    # Elo (diversos BINs)
+    elif re.match(r"^(4011(78|79)|431274|438935|451416|457393|4576(31|32)|504175|506(699|7[0-9]{2}|8[0-9]{2})|509[0-9]{3}|627780|636297|636368|650(031|032|033|034|035|036|037|038|039|040|041|042|043|044|045|046|047|048|049|050|051|052|053|054|055|056|057|058|059|405|406|407|408|409|410|411|412|413|414|415|416|417|418|419|420|421|422|423|424|425|426|427|428|429|430|431|432|433|434|435|436|437|438|439|440|441|442|443|444|445|446|447|448|449|450|451|452|453|454|455|456|457|458|459|460|461|462|463|464|465|466|467|468|469|470|471|472|473|474|475|476|477|478|479|480|481|482|483|484|485|486|487|488|489|490|491|492|493|494|495|496|497|498|499|500|501|502|503|504|505|506|507|508|509|510|511|512|513|514|515|516|517|518|519|520|521|522|523|524|525|526|527|528|529|530|531|532|533|534|535|536|537|538|539|540|541|542|543|544|545|546|547|548|549|550|551|552|553|554|555|556|557|558|559|560|561|562|563|564|565|566|567|568|569|570|571|572|573|574|575|576|577|578|579|580|581|582|583|584|585|586|587|588|589|590|591|592|593|594|595|596|597|598|599|600|601|602|603|604|605|606|607|608|609|610|611|612|613|614|615|616|617|618|619|620|621|622|623|624|625|626|627|628|629|630|631|632|633|634|635|636|637|638|639|640|641|642|643|644|645|646|647|648|649|650|651|652|653|654|655|656|657|658|659|660|661|662|663|664|665|666|667|668|669|670|671|672|673|674|675|676|677|678|679|680|681|682|683|684|685|686|687|688|689|690|691|692|693|694|695|696|697|698|699)[0-9]{10})$", numero_cartao):
+        return "Elo"
+    # Hipercard (6062, 3841)
+    elif re.match(r"^(606282|3841)[0-9]{10,12}$", numero_cartao):
+        return "Hipercard"
+    # Diners (301, 305, 36, 38)
+    elif re.match(r"^(30[0-5][0-9]{11}|36[0-9]{12}|38[0-9]{12})$", numero_cartao):
+        return "Diners"
+    # Aura (50)
+    elif re.match(r"^50[0-9]{14}$", numero_cartao):
+        return "Aura"
+    # JCB (35)
+    elif re.match(r"^35[0-9]{14}$", numero_cartao):
+        return "JCB"
+    else:
+        return "Bandeira desconhecida"
+
+if __name__ == "__main__":
+    while True:
+        numero_cartao = input("Digite o número do cartão de crédito: ")
+        bandeira = validar_bandeira(numero_cartao)
+        if bandeira == "Bandeira desconhecida":
+            print("Número inválido. Tente novamente.\n")
+            continue
+        print(f"A bandeira do cartão é: {bandeira}")
+        break
+```
+
+## Explicação das principais linhas
+
+- `import re`: importa o módulo de expressões regulares, usado para identificar padrões nos números dos cartões.
+- `numero_cartao.replace(" ", "")`: remove todos os espaços do número digitado.
+- Para cada bandeira, há um bloco `if`/`elif` com um padrão regex que identifica os intervalos de BINs (início do número) de cada bandeira:
+  - Visa: começa com 4.
+  - MasterCard: começa com 51-55 ou 2221-2720.
+  - American Express: começa com 34 ou 37.
+  - Discover: começa com 6011, 65, 644-649 ou 622.
+  - Elo: diversos intervalos específicos.
+  - Hipercard: começa com 606282 ou 3841.
+  - Diners: começa com 301, 305, 36 ou 38.
+  - Aura: começa com 50.
+  - JCB: começa com 35.
+- Se não corresponder a nenhum padrão, retorna "Bandeira desconhecida".
+- O bloco `while True` garante que, se o número for inválido, o programa pede novamente até receber um número válido.
+- O bloco `if __name__ == "__main__":` permite rodar o programa pelo terminal, pedindo o número do cartão e mostrando a bandeira identificada.
+
+
